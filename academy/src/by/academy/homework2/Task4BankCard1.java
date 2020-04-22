@@ -7,6 +7,7 @@ public class Task4BankCard1 {
 	int term = 2;
 
 	public String toString() {
+		System.out.println("sdf");
 		System.out.println("Данные по BankCard2: " + nameCart + " " + term + " года.");
 		return "";
 	}
