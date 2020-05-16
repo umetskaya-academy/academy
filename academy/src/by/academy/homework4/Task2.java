@@ -21,7 +21,7 @@ import java.util.Arrays;
 public class Task2<T> {
 
 	private T[] array;
-	int size;
+	private int size;
 
 	public Task2() {
 		super();
@@ -39,20 +39,58 @@ public class Task2<T> {
 		this.size = size;
 	}
 
+	public void add(T obj) {
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == null) {
+				array[i] = obj;
+				size++;
+				return;
+			}
+		}
+		array = Arrays.copyOf(array, array.length + 1);
+		array[array.length - 1] = obj;
+		size++;
+
+	}
+
+	public T get(int index) {
+		return (T) array[index];
+	}
+
+	public T getLast() {
+		return array[array.length - 1];
+	}
+
+	public T getFirst() {
+		return array[0];
+	}
+
+	public int size() {
+	return size;
+	}
+
+	public int getLastIndex() {
+		return size - 1;
+	}
+
 	public void remove(int index) {
-		System.out.println(index);
+
 		try {
 			array[index] = null;
 		} catch (RuntimeException e) {
 			System.out.println(this.size);
 		}
-		public T getFirst() {
-			return array[0];
-		}
-
-		public int getSize() {
-			return size;
-		}
 	}
 
+	public void remove(T obj) {
+
+		boolean check = false;
+		for (int i = 0; i < size; i++) {
+			if (array[i] == obj) {
+				array[i] = null;
+				check = true;
+				break;
+			}
+		}
+	}
 }
