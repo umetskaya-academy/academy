@@ -51,22 +51,26 @@ public class Main {
 //	Создать список оценок учеников с помощью ArryList, заполнить случайными
 //	оценками. Найти самую высокую оценку с использованием итератора.
 	public static void main(String[] args) {
-		int a = 1, i = 1, now = 1;
 		Random rand = new Random();
 		ArrayList<Integer> mark = new ArrayList<Integer>();
 		Iterator<Integer> iterator = arrayList.iterator();
+		for (int i = 1; i < 10; i++) {
+			list.add(rand.nextInt(11));
 
-		while (iterator.hasNext()) {
-			Iterator run = iterator;
-			while (run.hasNext()) {
-				now = (int) run.next();
-				if (i < now) {
-					i = now;
+			int max = list.get(0);
+			int now = 1;
+
+			while (iterator.hasNext()) {
+				//Iterator run = iterator;
+
+				int now = (int) iterator.next();
+				if (max < now) {
+					max = now;
 				}
 			}
 		}
 
-		System.out.println("Max " + i);
+		System.out.println("Max " + max);
 
 	}
 
@@ -83,12 +87,12 @@ public class Main {
 				+ "Этот класс реализует все необязательные операции со списком и предоставляет методы управления размером массива, "
 				+ "который используется для хранения списка.";
 		Map<Character, Integer> map = new HashMap<>();
-		ArrayList<Character> chars = new ArrayList<>();
+		// ArrayList<Character> chars = new ArrayList<>();
 		char c = 0;for(
 		int i = 0;i<text.length();i++)
 		{
 			char c = text.charAt(i);
-			map.put(i, get.map(i) + 1);
+			map.put(c, map.getOrDefault(c, 0) + 1);
 		}System.out.println(map.toString());
 	}
 
