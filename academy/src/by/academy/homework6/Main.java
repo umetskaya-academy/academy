@@ -17,19 +17,18 @@ import java.util.ArrayList;
 */
 public class Main {
 	public static void main(String[] args) {
-		ArrayList<User> users = new ArrayList<>();
-		users.add(new User("Ab", "Abc", 1));
-		users.add(new User("Abc", "Abcd", 2));
-		users.add(new User("Abcd", "Abcde", 3));
-		users.add(new User("Abcdev", "Abcdevj", 4));
-		users.add(new User("Abcdevjq", "Abcdevjqw", 5));
-		users.add(new User("Abcdevjqwe", "Abcdevjqwer", 6));
-		users.add(new User("Abcdevjqwert", "Abcdevjqwerty", 7));
-		users.add(new User("Abcdevjqwertyu", "Abcdevjqwertyui", 8));
-		users.add(new User("Abcdevjqwertyuio", "Abcdevjqwertyuiop", 9));
-		users.add(new User("Abcdevjqwertyuiopa", "Abcdevjqwertyuiopas", 10));
-
-		
+		ArrayList<User> userList = new ArrayList<>();
+		File usersFile;
+		userList.add(new User("Ab", "Abc", 1));
+		userList.add(new User("Abc", "Abcd", 2));
+		userList.add(new User("Abcd", "Abcde", 3));
+		userList.add(new User("Abcdev", "Abcdevj", 4));
+		userList.add(new User("Abcdevjq", "Abcdevjqw", 5));
+		userList.add(new User("Abcdevjqwe", "Abcdevjqwer", 6));
+		userList.add(new User("Abcdevjqwert", "Abcdevjqwerty", 7));
+		userList.add(new User("Abcdevjqwertyu", "Abcdevjqwertyui", 8));
+		userList.add(new User("Abcdevjqwertyuio", "Abcdevjqwertyuiop", 9));
+		userList.add(new User("Abcdevjqwertyuiopa", "Abcdevjqwertyuiopas", 10));
 
 		File dirUser = new File("C:\\Users\\Admin\\git\\academy\\academy\\src\\by\\academy\\homework6\\Main");
 		File dirNew = new File(dirUser, "Users");
@@ -39,10 +38,9 @@ public class Main {
 			dirNew.mkdir();
 
 			for (int i = 0; i < userList.size(); i++) {
-				userFile = new File(dirUser, (userList.get(i).getName() + "_" + userList.get(i).getSoName() + ".txt"));
-				userFile.createNewFile();
+				usersFile = new File(dirUser, (userList.get(i).getName() + "_" + userList.get(i).getName() + ".txt"));
 
-				try (ObjectOutputStream obj = new ObjectOutputStream(new FileOutputStream(file))) {
+				try (ObjectOutputStream obj = new ObjectOutputStream(new FileOutputStream(usersFile))) {
 					obj.writeObject(i);
 
 				} catch (IOException e) {
