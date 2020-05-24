@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class Task2 {
 	public static void main(String[] args) {
-		File file = new File("C:\\Users\\Admin\\git\\academy\\academy\\src\\by\\academy\\homework6\\Task2tekst.txt");
+		File file = new File("C:\\Users\\Admin\\git\\academy\\academy\\src\\by\\academy\\homework6\\Task2tekst");
 		File resultFile = new File("C:\\Users\\Admin\\git\\academy\\academy\\src\\by\\academy\\homework6\\result.txt");
 		
 		try (FileWriter writer = new FileWriter(resultFile);
