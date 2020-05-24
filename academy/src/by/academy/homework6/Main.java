@@ -29,10 +29,10 @@ public class Main {
 		users.add(new User("Abcdevjqwertyuio", "Abcdevjqwertyuiop", 9));
 		users.add(new User("Abcdevjqwertyuiopa", "Abcdevjqwertyuiopas", 10));
 
-		File dirNew = new File(dirTask, "Users");
+		
 
-		File dirUser = new File("src\\by\\academy\\homework6\\Main\\users");
-
+		File dirUser = new File("C:\\Users\\Admin\\git\\academy\\academy\\src\\by\\academy\\homework6\\Main");
+		File dirNew = new File(dirUser, "Users");
 		dirUser.mkdir();
 
 		if (!dirNew.exists()) {
