@@ -1,6 +1,10 @@
 package by.academy.homework6;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /* 
@@ -13,12 +17,21 @@ import java.io.IOException;
 */
 public class Task4 {
 	public static void main(String[] args) throws IOException {
-
+		String simvol;
 		File dir = new File("C:\\Users\\Admin\\git\\academy\\academy\\src\\by\\academy\\homework6\\", "FromTask4");
 		dir.mkdir();
+
+		BufferedReader buffered = new BufferedReader(
+				new FileReader("C:\\Users\\Admin\\git\\academy\\academy\\src\\by\\academy\\homework6\\Task2tekst"));
+		simvol = buffered.readLine();
+
 		for (int i = 0; i < 100; i++) {
 			File newFile = new File(dir, (i + ""));
 			newFile.createNewFile();
+
+			try (BufferedWriter bw = new BufferedWriter(new FileWriter(newFile))) {
+				bw.write(simvol.substring((int) (Math.random() * simvol.length())));
+			}
 		}
 	}
 }
